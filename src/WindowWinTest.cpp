@@ -9,9 +9,9 @@ protected:
 };
 
 TEST_F(WindowWinTest, InitTest) {
-	s_window = std::make_unique<WindowWin>();
+	s_window = std::make_unique<WindowWin>(1280u, 720u, "Luna");
 
 	ObjectInitCheck("s_window", s_window);
 
-	EXPECT_EQ(s_window->GetSummation(3, 4), 7) << "The summation isn't correct.";
+	s_window->SetWindowTitle("Hello world.");
 }
